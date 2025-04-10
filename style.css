@@ -4,47 +4,59 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8; /* 柔らかい背景色 */
-    color: #333;
+    /* 虹色のグラデーション背景 */
+    background: linear-gradient(135deg, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff);
+    background-size: 400% 400%; /* グラデーションを大きく広げる */
+    animation: rainbow-bg 15s ease infinite; /* アニメーションを追加 */
+    color: #333; /* 基本の文字色は濃いめに */
+}
+
+/* グラデーション背景のアニメーション */
+@keyframes rainbow-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* コンテナ */
 body > * { /* ヘッダー、メイン、フッターに適用 */
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto; /* 上下のマージンを追加 */
     padding: 20px;
+    box-sizing: border-box; /* paddingを含めて幅計算 */
 }
 
 /* ヘッダー */
 header {
-    background-color: #6a89cc; /* 落ち着いた青系の色 */
-    color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明の白背景 */
+    color: #e63946; /* 目立つ赤系の色 */
     text-align: center;
     padding: 30px 20px;
-    border-radius: 0 0 15px 15px; /* 下部の角を丸く */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* 角を丸く */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
-    font-weight: 300; /* 少し細めのフォント */
+    font-size: 2.8em; /* 少し大きく */
+    font-weight: bold; /* 太字に */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* 軽い影 */
 }
 
 /* メインコンテンツ */
 main {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9); /* 少し透明度のある白背景 */
     padding: 30px;
     border-radius: 15px; /* 角を丸く */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* 影を少し強く */
     margin-bottom: 30px;
 }
 
 section {
     margin-bottom: 40px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #eee; /* セクションの区切り線 */
+    border-bottom: 1px solid #ddd; /* 区切り線を少し濃く */
 }
 
 section:last-child {
@@ -53,12 +65,13 @@ section:last-child {
 }
 
 h2 {
-    color: #4a69bd; /* ヘッダーより少し薄い青 */
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    font-weight: 400;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 5px;
+    color: #1d3557; /* 濃い青色 */
+    font-size: 2em; /* 少し大きく */
+    margin-bottom: 20px;
+    font-weight: 600; /* 少し太く */
+    border-bottom: 3px solid #fca311; /* オレンジ系のアクセント線 */
+    padding-bottom: 8px;
+    display: inline-block; /* 線がテキスト幅に合うように */
 }
 
 ul {
@@ -67,25 +80,29 @@ ul {
 }
 
 li {
-    margin-bottom: 10px;
-    padding-left: 20px;
+    margin-bottom: 12px;
+    padding-left: 25px;
     position: relative;
+    font-size: 1.1em; /* 少し大きく */
 }
 
-li::before { /* リストマーカーをカスタマイズ */
-    content: '✓';
-    color: #6a89cc;
+li::before { /* リストマーカーを星に変更 */
+    content: '★';
+    color: #fca311; /* オレンジ系の星 */
     position: absolute;
     left: 0;
-    font-weight: bold;
+    font-size: 1.2em; /* マーカーを少し大きく */
+    top: -2px; /* 位置調整 */
 }
 
 strong {
-    color: #555;
+    color: #e63946; /* 赤系の色で強調 */
+    font-weight: bold;
 }
 
 p {
     margin-bottom: 15px;
+    color: #444; /* 文字色を少し濃く */
 }
 
 /* フッター */
@@ -93,38 +110,43 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 30px;
-    color: #777;
+    color: #fff; /* 白文字 */
     font-size: 0.9em;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+    border-radius: 15px; /* 角を丸く */
 }
 
-/* ボタンやリンクなどのインタラクティブ要素（将来追加用） */
+/* ボタンやリンクなどのインタラクティブ要素 */
 a, button {
-    transition: all 0.3s ease; /* 滑らかな変化 */
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
 a {
-    color: #6a89cc;
+    color: #0077b6; /* 明るい青 */
     text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover {
-    color: #4a69bd;
+    color: #023e8a; /* 濃い青 */
     text-decoration: underline;
 }
 
 button {
-    background-color: #6a89cc;
+    background: linear-gradient(45deg, #fca311, #e63946); /* オレンジ〜赤のグラデーション */
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px; /* 丸みのあるボタン */
-    font-size: 1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 12px 25px; /* 少し大きく */
+    border-radius: 25px; /* より丸く */
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase; /* 大文字に */
 }
 
 button:hover {
-    background-color: #4a69bd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px); /* ホバー時に少し浮き上がる効果 */
+    background: linear-gradient(45deg, #e63946, #fca311); /* ホバーでグラデーション反転 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
 }
