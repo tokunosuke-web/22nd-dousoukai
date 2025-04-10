@@ -1,0 +1,130 @@
+/* 基本的なリセットとフォント設定 */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* 柔らかい背景色 */
+    color: #333;
+}
+
+/* コンテナ */
+body > * { /* ヘッダー、メイン、フッターに適用 */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー */
+header {
+    background-color: #6a89cc; /* 落ち着いた青系の色 */
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 0 0 15px 15px; /* 下部の角を丸く */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 300; /* 少し細めのフォント */
+}
+
+/* メインコンテンツ */
+main {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px; /* 角を丸く */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee; /* セクションの区切り線 */
+}
+
+section:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+h2 {
+    color: #4a69bd; /* ヘッダーより少し薄い青 */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-weight: 400;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+li::before { /* リストマーカーをカスタマイズ */
+    content: '✓';
+    color: #6a89cc;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+strong {
+    color: #555;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* ボタンやリンクなどのインタラクティブ要素（将来追加用） */
+a, button {
+    transition: all 0.3s ease; /* 滑らかな変化 */
+    cursor: pointer;
+}
+
+a {
+    color: #6a89cc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4a69bd;
+    text-decoration: underline;
+}
+
+button {
+    background-color: #6a89cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px; /* 丸みのあるボタン */
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #4a69bd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px); /* ホバー時に少し浮き上がる効果 */
+}
